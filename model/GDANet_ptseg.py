@@ -68,7 +68,7 @@ class GDANet(nn.Module):
         self.SGCAM_2s = SGCAM(64)
         self.SGCAM_2g = SGCAM(64)
 
-    def forward(self, x, norm_plt, cls_label):
+    def forward(self, x, norm_plt, cls_label,gt=None):
         B, C, N = x.size()
         ###############
         """block 1"""
@@ -123,5 +123,8 @@ class GDANet(nn.Module):
         x = F.log_softmax(x, dim=1)
         x = x.permute(0, 2, 1)  # b,n,64
 
-        return x
+        if gt is not None:
+            return x, F.nll_loss(x.contiguous().view(-1, self.num_part), gt.view(-1, 1)[:, 0])
+        else:
+            return x
 
