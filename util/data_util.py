@@ -155,7 +155,7 @@ class PartNormalDataset(Dataset):
     def __len__(self):
         return len(self.datapath)
 
-    
+
 if __name__ == '__main__':
     train = PartNormalDataset(npoints=2048, split='trainval', normalize=False)
     test = PartNormalDataset(npoints=2048, split='test', normalize=False)

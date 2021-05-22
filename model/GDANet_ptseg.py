@@ -68,7 +68,7 @@ class GDANet(nn.Module):
         self.SGCAM_2s = SGCAM(64)
         self.SGCAM_2g = SGCAM(64)
 
-    def forward(self, x, norm_plt, cls_label):
+    def forward(self, x, norm_plt, cls_label,**kwargs):
         B, C, N = x.size()
         ###############
         """block 1"""
