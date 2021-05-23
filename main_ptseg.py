@@ -382,7 +382,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='3D Shape Part Segmentation')
     parser.add_argument('--exp_name', type=str, default='GDANet', metavar='N',
                         help='Name of the experiment')
-    parser.add_argument('--batch_size', type=int, default=64, metavar='batch_size',
+    parser.add_argument('--batch_size', type=int, default=32, metavar='batch_size',
                         help='Size of batch)')
     parser.add_argument('--test_batch_size', type=int, default=32, metavar='batch_size',
                         help='Size of batch)')
