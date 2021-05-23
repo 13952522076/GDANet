@@ -7,7 +7,7 @@ from util.GDANet_util import local_operator_withnorm, local_operator, GDM, SGCAM
 class GDANet(nn.Module):
     def __init__(self, num_classes):
         super(GDANet, self).__init__()
-
+        self.num_part = num_classes
         self.bn1 = nn.BatchNorm2d(64, momentum=0.1)
         self.bn11 = nn.BatchNorm2d(64, momentum=0.1)
         self.bn12 = nn.BatchNorm1d(64, momentum=0.1)
