@@ -68,7 +68,7 @@ class ModelNet40(Dataset):
 class PartNormalDataset(Dataset):
     def __init__(self, npoints=2500, split='train', normalize=False):
         self.npoints = npoints
-        self.root = '/work/zq0020/data/shapenetcore_partanno_segmentation_benchmark_v0_normal'
+        self.root = './data/shapenetcore_partanno_segmentation_benchmark_v0_normal'
         self.catfile = os.path.join(self.root, 'synsetoffset2category.txt')
         self.cat = {}
         self.normalize = normalize
